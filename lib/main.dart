@@ -1,7 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -94,6 +95,7 @@ class AutomatedAnimator extends StatefulWidget {
 
 class _AutomatedAnimatorState extends State<AutomatedAnimator> with SingleTickerProviderStateMixin {
   _AutomatedAnimatorState();
+
   late AnimationController controller;
 
   @override
@@ -241,7 +243,7 @@ class WaveLoadingBubblePainter extends CustomPainter {
               loadingWheelColor,
               Colors.transparent,
             ],
-            stops: [0.0, 0.9, 1.0],
+            stops: const [0.0, 0.9, 1.0],
             startAngle: 0,
             endAngle: math.pi * 1,
             transform: GradientRotation(period * math.pi * 2 * 5),
@@ -333,7 +335,7 @@ class WavePathHorizontal {
   Path build() {
     double startPointX = startPoint.dx;
     double startPointY = startPoint.dy;
-    Path returnPath = new Path();
+    Path returnPath = Path();
     returnPath.moveTo(startPointX, startPointY);
 
     for (double i = 0; i <= width; i++) {
